@@ -1,4 +1,4 @@
 interface:
   display_name: '公司产品资料打包'
-  short_description: '从项目代码和业务资料提炼产品介绍、推广建议，生成可导入的标准 Markdown'
-  default_prompt: '请使用 $company-product-packager 根据当前项目生成 product-profile.md，标明功能依据、实施边界及待确认事项。'
+  short_description: '把项目整理成销售易读的产品简介与推广话术，保留事实依据并生成可导入的 Markdown'
+  default_prompt: '请使用 $company-product-packager 为当前项目生成精简产品 Markdown，突出客户价值与主流程，区分可选扩展，保留依据和交付边界。'

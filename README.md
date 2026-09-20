@@ -4,6 +4,8 @@
 
 当前提供 **company-product-packager**：整理产品名称、简介、目标客户、已实现功能、案例、报价、实施边界、介绍话术、推广建议和资料来源。缺少依据的案例、价格和效果保留为待确认，默认生成「整理中」档案。Skill 不需要 API Key，也不会发送推广消息。
 
+当前版本 **1.1.0** 默认生成业务精简版：先讲客户价值和产品主流程，按需要区分可选扩展；工程证据集中放在来源字段。篇幅建议不改变 Markdown v1 格式或导入上限。需要详细版时可直接向 Agent 说明。
+
 ## 直接交给开发 Agent
 
 把下面整段复制给开发 Agent，它会根据自己的环境选择一种安装方式：
@@ -41,7 +43,7 @@ claude plugin install company-products@xhnova
 
 对开发 Agent 说：
 
-> 请使用 company-product-packager，根据当前项目和已有文档生成 product-profile.md。写清面向谁、解决什么问题、已有功能、如何介绍推广、实施边界和依据；没有依据的案例与报价标记待确认。
+> 请使用最新版 company-product-packager，根据当前项目和已有文档生成业务精简版产品 Markdown。突出客户价值和主流程，按需区分可选扩展；推广介绍能直接讲给客户，保留事实依据和交付边界。已有文件时另存新版本。
 
 Skill 会参照 [格式约定](skills/company-product-packager/references/format.md)，生成供人阅读和系统导入的同一份产品资料。它可使用 Python 3 标准库脚本，无需安装第三方依赖：
 
@@ -60,5 +62,7 @@ Windows 也可用 `py -3`。没有 Python 时，Agent 可按同一格式直接�
 通过 npx 安装：`npx skills update company-product-packager`。
 
 通过 Claude Code 插件安装：先运行 `claude plugin marketplace update xhnova`，再运行 `claude plugin update company-products@xhnova`。
+
+更新后新开 Agent 会话，避免沿用旧会话已加载的 Skill。要求 Agent 在交付时说明所用 Skill 版本；“再生成一版”默认另存新文件，保留之前的产品资料。
 
 安装方式参考：[skills CLI](https://github.com/vercel-labs/skills)、[Claude Code 插件市场](https://code.claude.com/docs/en/plugin-marketplaces)。
